@@ -1,2 +1,5 @@
-# nofetch - nofetch only fetch essential terminal config highlights
+# nofetch
 
+```
+Nofetch Only Fetch Essential Terminal Config Highlights
+```
