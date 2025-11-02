@@ -1,15 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>nofetch-web</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nofetch</title>
+<style>
+  :root {
+    --accent: #00ff7f;
+    --text: #c0c0c0;
+    --muted: #777;
+    --bg: #0e0e0e;
+  }
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: monospace;
+    white-space: pre;
+    padding: 20px;
+    font-size: 15px;
+    line-height: 1.6em;
+  }
+  #logo {
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 1em;
+    user-select: none;
+  }
+  #info {
+    color: var(--text);
+  }
+  footer {
+    color: var(--muted);
+    font-size: 0.8em;
+    margin-top: 2em;
+  }
+  footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+</style>
 </head>
 <body>
-  <pre id="logo">
+<pre id="logo">
 ░█▀█░█▀█░█▀▀░█▀▀░▀█▀░█▀▀░█░█
-░█░█░█░█░█▀▀░█▀▀░░█░░█░░░█▀█  no-fetch ain't like neofetch
+░█░█░█░█░█▀▀░█▀▀░░█░░█░░░█▀█   no-fetch ain't like neofetch
 ░▀░▀░▀▀▀░▀░░░▀▀▀░░▀░░▀▀▀░▀░▀
-  </pre>
+</pre>
 
-  <footer>
-    nofetch-web v0.1 by <a href="https://github.com/nlkguy" target="_blank">@nlkguy</a>
-  </footer>
+<pre id="info">Loading...</pre>
+
+<footer>nofetch v0.2 by <a href="https://github.com/nlkguy" target="_blank">@nlkguy</a></footer>
+
+<script>
+function getOS() {
+  return "Unknown OS";
+}
+function getBrowser() {
+  return "Unknown Browser";
+}
+function getGPUInfo() {
+  return "Unknown GPU"
+}
+
+
+function main() {
+  const os = getOS();
+  const browser = getBrowser();
+  const cores = "Unknown";
+  const arch = "Unknown Arch";
+  const gpu = getGPUInfo();
+  const res = `${screen.width}x${screen.height}`;
+  const mem = "Unknown Mem Usage";
+  const uptime = performance.now();
+
+  document.getElementById("info").textContent = `
+OS      : ${os} (${browser})
+CPU     : ${cores} cores (${arch})
+GPU     : ${gpu}
+Screen  : ${res}
+Mem     : ${mem}
+Uptime  : ${uptime}
+`;
+}
+
+main();
+setInterval(main, 1000);
+</script>
 </body>
 </html>
