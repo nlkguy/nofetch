@@ -4,6 +4,11 @@
 Nofetch Only Fetch Essential Terminal Config Highlights
 ```
 
+- Zero dependencies
+- POSIX-compliant
+- Faaast
+- Simple and Powerful
+
 ### install globally
 
 ```
@@ -14,3 +19,5 @@ sudo chmod +x /usr/local/bin/nofetch
 nofetch
 
 ```
+
+### 
