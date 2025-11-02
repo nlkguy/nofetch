@@ -22,14 +22,14 @@ main(){
     . /etc/os-release 2>/dev/null
     os="${PRETTY_NAME:-Unknown OS}"
     kernel="$(uname -r)"
-    echo "\tOS\t: $os ($kernel)"
+    print "\tOS\t: $os ($kernel)"
 
     #printf "\tHost\t:\t%s (%s)\n" "$(hostname)" "$(hostname -I | awk '{print $1}')"
     #printf "\tKernel\t:\t" && uname -r
 
     host="$(hostname)"
     ip="$(ip addr show | awk '/inet / && !/127.0.0.1/ {sub(/\/.*/,"",$2); print $2; exit}')"
-    echo "\tHost\t: $host (${ip:-no net})"
+    print "\tHost\t: $host (${ip:-no net})"
 
 
 
@@ -44,13 +44,13 @@ main(){
 
     cpu="$(awk -F: '/model name/{print $2; exit}' /proc/cpuinfo | sed 's/^ //')"
     arch="$(uname -m)"
-    echo "\tCPU\t: $cpu ($arch)"
+    print "\tCPU\t: $cpu ($arch)"
 
 
     gpu="$(lspci 2>/dev/null | awk -F': ' '/VGA|3D|Display/{print $3; exit}')"
     [ -z "$gpu" ] && gpu="$(grep -m1 'VGA' /proc/bus/pci/devices 2>/dev/null || echo 'N/A')"
     res="$(awk -F'x' '/x/ {print $1"x"$2; exit}' /sys/class/graphics/fb0/modes 2>/dev/null)"
-    echo "\tGPU\t: ${gpu:-N/A} (${res:-N/A})"
+    print "\tGPU\t: ${gpu:-N/A} (${res:-N/A})"
 
 
 
