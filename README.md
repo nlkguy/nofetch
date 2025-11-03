@@ -1,13 +1,14 @@
 # nofetch
 
-```
-Nofetch Only Fetch Essential Terminal Config Highlights
-```
+![output image](/docs/output.png)
+
+> Nofetch Only Fetch Essential Terminal Config Highlights
+
+
 
 - Zero dependencies
 - POSIX-compliant
-- Faaast
-- Simple and Powerful
+- Faaast,Simple and Powerful
 
 ## install globally
 
