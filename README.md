@@ -32,6 +32,12 @@ bash <( (curl -fsSL https://raw.githubusercontent.com/nlkguy/nofetch/refs/heads/
 ## output
 
 ```bash
+
+    ░█▀█░█▀█░█▀▀░█▀▀░▀█▀░█▀▀░█░█
+    ░█░█░█░█░█▀▀░█▀▀░░█░░█░░░█▀█ no-fetch ain't like neofetch
+    ░▀░▀░▀▀▀░▀░░░▀▀▀░░▀░░▀▀▀░▀░▀
+
+
 System:    Ubuntu 24.04
 Kernel:    6.8.0-49-generic
 Uptime:    3h 22m
