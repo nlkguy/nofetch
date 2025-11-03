@@ -14,7 +14,7 @@ Usage:
   nofetch [options]
 
 Options:
-  -l, --logo        Show ASCII logo before system info
+  -l, --logo        Show/Hide ASCII logo before system info
   -h, --help        Show this help message
   -v, --version     Show version info
 
@@ -22,7 +22,6 @@ EOF
 }
 
 version(){
-    #printf "\n\tnofetch v$VERSION by nlkguy\n\n"
     printf "\nnofetch v%s by nlkguy\n\n" "$VERSION"
 }
 
@@ -71,7 +70,7 @@ main(){
     while [ $# -gt 0 ]; do
         case "$1" in
             -l|--logo)
-                show_logo=true ;;
+                show_logo=false ;;
             -h|--help)
                 usage; exit 0 ;;
             -v|--version)
