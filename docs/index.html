@@ -53,10 +53,26 @@
 
 <script>
 function getOS() {
-  return "Unknown OS";
+  const ua = navigator.userAgent;
+  if (/Windows NT/.test(ua)) return "Windows";
+  if (/Mac OS X/.test(ua)) return "macOS";
+  if (/Android/.test(ua)) return "Android";
+  if (/iPhone|iPad|iPod/.test(ua)) return "iOS";
+  if (/Linux/.test(ua)) {
+    if (/Ubuntu/.test(ua)) return "Ubuntu";
+    if (/Debian/.test(ua)) return "Debian";
+    if (/Fedora/.test(ua)) return "Fedora";
+    if (/Arch/.test(ua)) return "Arch Linux";
+    return "Linux";
+  }
+  return "Unknown";
 }
 function getBrowser() {
-  return "Unknown Browser";
+  const ua = navigator.userAgent;
+  if(ua){
+    return ua;
+  }
+  return "Unknown Browser"
 }
 function getGPUInfo() {
   return "Unknown GPU"
