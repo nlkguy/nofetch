@@ -70,7 +70,11 @@ function getOS() {
 function getBrowser() {
   const ua = navigator.userAgent;
   if(ua){
-    return ua;
+    if (ua.includes("Firefox")) return "Firefox";
+    if (ua.includes("Edg")) return "Edge";
+    if (ua.includes("Chrome") && !ua.includes("Chromium") && !ua.includes("Edg")) return "Chrome";
+    if (ua.includes("Safari") && !ua.includes("Chrome")) return "Safari";
+    if (ua.includes("Chromium")) return "Chromium";
   }
   return "Unknown Browser"
 }
